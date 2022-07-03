@@ -1,0 +1,91 @@
+ [
+  {
+    "SerialNo": "1",
+    "Name": "Brown eggs",
+    "Quantity": "12",
+    "Unit":"Pcs",
+    "Department":"Dairy",
+    "Notes":"Raw organic brown eggs in a basket"
+
+  },
+  {
+    "SerialNo": "2",
+    "Name": "Sweet fresh stawberry",
+    "Quantity": "500",
+    "Unit":"Grms",
+    "Department":"Produce",
+    "Notes":"Sweet fresh stawberry on the wooden table"
+  }
+  ,
+  {
+    "SerialNo": "3",
+    "Name": "Green smoothie",
+    "Quantity": "1",
+    "Unit":"Pint",
+    "Department":"Diary",
+    "Notes":"Glass of green smoothie with quail egg's yolk, served with cocktail tube, green apple and baby spinach leaves over tin surface."
+  }
+  ,
+  {
+    "SerialNo": "4",
+    "Name": "Bread",
+    "Quantity": "1",
+    "Unit":"Pcs",
+    "Department":"Bakery",
+    "Notes":"Homemade bread"
+  }
+  ,
+  {
+    "SerialNo": "5",
+    "Name": "Fresh tomato",
+    "Quantity": "1",
+    "Unit":"Kg",
+    "Department":"Vegetable",
+    "Notes":"Fresh tomato juice with basil"
+  }
+  ,
+  {
+    "SerialNo": "6",
+    "Name": "Green beans",
+    "Quantity": "1",
+    "Unit":"Kg",
+    "Department":"Vegetable",
+    "Notes":"Raw organic green beans ready to eat"
+  }
+  ,
+  {
+    "SerialNo": "7",
+    "Name": "Pears",
+    "Quantity": "1",
+    "Unit":"Kg",
+    "Department":"Fruit",
+    "Notes":"Fresh pears"
+  }
+  ,
+  {
+    "SerialNo": "8",
+    "Name": "Oranges",
+    "Quantity": "2",
+    "Unit":"Kg",
+    "Department":"Fruits",
+    "Notes":"Orange popsicle ice cream bars made from fresh oranges."
+  }
+  ,
+  {
+    "SerialNo": "9",
+    "Name": "Yogurt",
+    "Quantity": "2",
+    "Unit":"Pcs",
+    "Department":"Diary",
+    "Notes":"Homemade yogurt with raspberry and mint"
+  }
+  ,
+  {
+    "SerialNo": "10",
+    "Name": "Fresh blueberries",
+    "Quantity": "500",
+    "Unit":"Gms",
+    "Department":"Fruit",
+    "Notes":"Healthy breakfast. berry crumble with fresh blueberries, raspberries, strawberries, almond, walnuts, pecans, yogurt, and mint."
+  }
+]

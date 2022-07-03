@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badge Challenge 02</title>
+
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        #myTable {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            font-style: italic;
+            width: 100%;
+            font-weight: 600;
+        }
+
+        #myTable td,
+        #myTable th {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+
+        #myTable tr:nth-child(even) {
+            background-color: #dad7d7;
+        }
+
+        #myTable tr:hover {
+            background-color: #ddd;
+        }
+
+        #myTable th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #000;
+            color: white;
+        }
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url("./grocery-basket_Dan-Dalton-56a2c9de3df78cf77279f4da.jpg");
+
+            /* Add the blur effect */
+            /* filter: blur(8px);
+  -webkit-filter: blur(8px); */
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .bg-image {
+            /* The image used */
+            background-image: url("./grocery-basket_Dan-Dalton-56a2c9de3df78cf77279f4da.jpg");
+
+            /* Add the blur effect */
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="data.json"></script>
+    <!-- <script type="text/javascript" src="script.js"></script> -->
+</head>
+
+<body>
+    <center>
+        <div class="bg-image"></div>
+        <h1>Grocery Shopping List</h1>
+
+        <table id="myTable">
+            <tr>
+                <th>SerialNo</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Unit</th>
+                <th>Department</th>
+                <th>Notes</th>
+            </tr>
+        </table>
+    </center>
+</body>
+<script type="text/javascript">
+    $.ajax({
+        url: 'data.json',
+        dataType: 'json',
+        success: function (data) {
+            for (var i = 0; i < data.length; i++) {
+                var row = $('<tr><td>' + data[i].SerialNo + '</td><td>' + data[i].Name + '</td><td>' + data[i].Quantity + '</td><td>' + data[i].Unit + '</td><td>' + data[i].Department + '</td><td>' + data[i].Notes + '</td></tr>');
+                $('#myTable').append(row);
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert('Error: ' + textStatus + ' - ' + errorThrown);
+        }
+    });
+</script>
+
+</html>
