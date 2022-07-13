@@ -80,10 +80,41 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+
+        /* set the position of dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* set the size and position of button on web */
+        .button {
+            padding: 10px 30px;
+            font-size: 15px;
+        }
+
+        /* provide css to background of list items */
+        #list-items {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 185px;
+        }
+
+        /* provide css to list items */
+        #list-items a {
+            display: block;
+            font-size: 18px;
+            background-color: #ddd;
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+        }
     </style>
 
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="data.json"></script>
+    <script type="text/javascript" src="script4.js"></script>
     <!-- <script type="text/javascript" src="script.js"></script> -->
 </head>
 
@@ -91,6 +122,20 @@
     <center>
         <div class="bg-image"></div>
         <h1>Grocery Shopping List</h1>
+
+        <div>
+            Choose a department:
+            <select id="myInput">
+                <option value=""> ---All--- </option>
+                <option value="Diary"> Diary </option>
+                <option value="Produce"> Produce </option>
+                <option value="Bakery"> Bakery </option>
+                <option value="Vegetable"> Vegetable </option>
+                <option value="Fruit"> Fruit </option>
+            </select>
+
+            <button onclick="myFunction()">Click me</button>
+        </div>
 
         <table id="myTable">
             <tr>
@@ -105,6 +150,7 @@
     </center>
 </body>
 <script type="text/javascript">
+
     $.ajax({
         url: 'data.json',
         dataType: 'json',
@@ -118,6 +164,35 @@
             alert('Error: ' + textStatus + ' - ' + errorThrown);
         }
     });
+
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput").value;
+        filter = input.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[4];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if(input == "")
+                {
+                    tr[i].style.display = "";
+                }
+                else if (txtValue == input) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+//     function selectedDepartment() {  
+// var mylist = document.getElementById("myList");  
+// document.getElementById("favourite").value = mylist.options[mylist.selectedIndex].text;  
+// }  
+
 </script>
 
 </html>
