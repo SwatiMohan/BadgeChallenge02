@@ -81,40 +81,19 @@
             background-size: cover;
         }
 
-        /* set the position of dropdown */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
         /* set the size and position of button on web */
         .button {
             padding: 10px 30px;
             font-size: 15px;
         }
-
-        /* provide css to background of list items */
-        #list-items {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 185px;
-        }
-
-        /* provide css to list items */
-        #list-items a {
-            display: block;
-            font-size: 18px;
-            background-color: #ddd;
-            color: black;
-            text-decoration: none;
-            padding: 10px;
-        }
     </style>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="data.json"></script>
-    <script type="text/javascript" src="script4.js"></script>
+    <!-- <script type="text/javascript" src="script4.js"></script> -->
     <!-- <script type="text/javascript" src="script.js"></script> -->
 </head>
 
@@ -123,18 +102,23 @@
         <div class="bg-image"></div>
         <h1>Grocery Shopping List</h1>
 
-        <div>
-            Choose a department:
-            <select id="myInput">
-                <option value=""> ---All--- </option>
-                <option value="Diary"> Diary </option>
-                <option value="Produce"> Produce </option>
-                <option value="Bakery"> Bakery </option>
-                <option value="Vegetable"> Vegetable </option>
-                <option value="Fruit"> Fruit </option>
-            </select>
-
-            <button onclick="myFunction()">Click me</button>
+        <div class="row">
+            <div class="col-md-3">
+                <h3>Choose a department:</h3>
+            </div>
+            <div class="col-md-4">
+                <select id="myInput" class="form-control">
+                    <option value=""> ---All--- </option>
+                    <option value="Diary"> Diary </option>
+                    <option value="Produce"> Produce </option>
+                    <option value="Bakery"> Bakery </option>
+                    <option value="Vegetable"> Vegetable </option>
+                    <option value="Fruit"> Fruit </option>
+                </select>
+            </div>
+            <div class="col-md-1">
+                <button onclick="myFunction()" class="btn btn-primary">Click me</button>
+            </div>           
         </div>
 
         <table id="myTable">
@@ -166,17 +150,15 @@
     });
 
     function myFunction() {
-        var input, filter, table, tr, td, i, txtValue;
+        var input, table, tr, td, i, txtValue;
         input = document.getElementById("myInput").value;
-        filter = input.toUpperCase();
         table = document.getElementById("myTable");
         tr = table.getElementsByTagName("tr");
         for (i = 0; i < tr.length; i++) {
             td = tr[i].getElementsByTagName("td")[4];
             if (td) {
                 txtValue = td.textContent || td.innerText;
-                if(input == "")
-                {
+                if (input == "") {
                     tr[i].style.display = "";
                 }
                 else if (txtValue == input) {
@@ -189,7 +171,7 @@
     }
 
 //     function selectedDepartment() {  
-// var mylist = document.getElementById("myList");  
+// var mylist = document.getElementById("myInput");  
 // document.getElementById("favourite").value = mylist.options[mylist.selectedIndex].text;  
 // }  
 
